@@ -1,0 +1,22 @@
+body {
+  max-width: 640px;
+  margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1.125em;
+  color: #333;
+  line-height: 1.5em;
+  font-family: "Helvetica, Arial, Sans Serif";
+}
+
+h1 {
+  color: #555
+}
+
+h2, h3 {
+  color: #000;
+}
+
+a {
+  color: #000;
+}
+
