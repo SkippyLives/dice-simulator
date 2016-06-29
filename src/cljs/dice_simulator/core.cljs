@@ -33,7 +33,7 @@
       (if (= i n)
         (swap! app-state assoc :result res)
         (let [r (take d (repeatedly #(rand-int 6)))
-              k (reduce #(and %1 (< %2 f)) true r)]
+              k (reduce #(or %1 (< %2 f)) false r)]
           (recur (inc i) (update-in res [k] inc)))))))
 
 (def sep [:div {:style {:height "16px"}}])
