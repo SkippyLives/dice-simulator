@@ -21,7 +21,8 @@
   (let [v (get c i)]
    ^{:key i}
    [:button
-    {:on-click #(swap! app-state assoc kw v)
+    {:style {:font-size "30px"}
+     :on-click #(swap! app-state assoc kw v)
      :disabled (= v (kw @app-state))}
     v]))
 
@@ -41,10 +42,10 @@
 (defn app []
   [:div
    [:div
-    [:div "Dice"]
+    [:div "Number of Dice"]
     (doall (map-indexed #(button :dice dice %) dice))]
    [:div
-    [:div "Faces"]
+    [:div "Goal faces"]
     (doall (map-indexed #(button :faces faces %) faces))]
    [:div
     [:div "Iterations"]
@@ -52,7 +53,8 @@
    sep
    [:div
     [:button
-     {:on-click sim
+     {:style {:font-size "34px"}
+      :on-click sim
       :disabled (not (and (:dice @app-state)
                           (:faces @app-state)
                           (:iterations @app-state)))}
