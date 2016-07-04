@@ -30,6 +30,9 @@
     v]))
 
 (defn sim []
+  (let [favicon (js/document.getElementById "favicon")
+        href (str "favicon" (inc (rand-int 6)) ".png")]
+    (set! (.-href favicon) href))
   (let [d (:dice @app-state)
         r (:rolls @app-state)
         f (:faces @app-state)
